@@ -50,7 +50,7 @@ function ToDoList() {
                 type="text"
                 value={newTask}
                 onChange={handleInputChange}
-                placeholder="Add a new task"
+                placeholder="Find out where all the socks go"
             />
             <button onClick={addTask} className="add-task-button">
                 Add Task
