@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 function ToDoList({ todos, onDelete }) {
 
-    const [tasks, settasks] = useState([]);
+    const [tasks, settasks] = useState([Brush teeth, Take a shower, Go to the gym]);
     const [newTask, setNewTask] = useState('');
 
     function handLeInputChange(event) {
@@ -52,16 +52,27 @@ function ToDoList({ todos, onDelete }) {
             value={newTask}
             onChange={handLeInputChange}
             placeholder="Add a new task"
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.text}
-            <button onClick={() => onDelete(todo.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+     
+        <button 
+            onClick={addTask}
+            className="add-task-button"
+        </button>
+    </div>);
 }
+
+ol>
+    {tasks.map((task) => (
+        <li key={task.id} className="todo-item">
+            <span>{task.text}</span>
+            <button onClick={() => moveTaskUp(task.id)}>↑</button>
+            <button onClick={() => moveTaskDown(task.id)}>↓</button>
+            <button onClick={() => deleteTask(task.id)}>Delete</button>
+        </li>
+    ))}
+        </ol>
+        <button onClick={addTask} className="add-task-button">Add Task</button>
+        <button onClick={deleteTask} className="delete-task-button">Delete Task</button>
+        
+</ol>
 export default ToDoList;
 
