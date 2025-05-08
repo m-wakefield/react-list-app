@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+/* ToDoList Styles */
+.todo-list {
+  margin: 2rem auto;
+  max-width: 400px;
+  text-align: left;
+  background: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list button {
+  margin: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #61dafb;
+  color: #fff;
+}
+
+.todo-list button:hover {
+  background-color: #4ea4d4;
+}
+
+.todo-list ol {
+  padding-left: 1.2rem;
+}
+
+.todo-list li {
+  margin: 0.5rem 0;
+  list-style: decimal;
+}
