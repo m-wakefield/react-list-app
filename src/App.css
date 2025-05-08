@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(243, 5, 5);
 }
 
 .App-link {
@@ -42,7 +42,7 @@
   margin: 2rem auto;
   max-width: 400px;
   text-align: left;
-  background: #f0f0f0;
+  background: #65eb0b;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@
   border: none;
   border-radius: 4px;
   background-color: #61dafb;
-  color: #fff;
+  color: #000000;
 }
 
 .todo-list button:hover {
