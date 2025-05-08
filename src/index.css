@@ -1,5 +1,5 @@
 body{
-  background-color: #050101;
+  background-color: hsl(222, 100%, 2%);
 }
 
 .to-do-list{
@@ -58,12 +58,13 @@ li{
   font-weight: bold;
   padding:  15px;
   background-color: aliceblue;
-  margin-bottom: 10px
-  border: 3px solid #ccc;
+  margin-bottom: 10px;
+  border: 3px solid #8cbfd3;
   border-radius: 5px;
   display: flex;
   align-items: center;
 }
+
 .text{
   flex: 1;
 }
