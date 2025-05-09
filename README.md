@@ -2,8 +2,7 @@ To-Do List React App
 
 Monique Wakefield 
 
-Hosting Link: https://github.com/m-wakefield/react-list-app
-  https://github.com/m-wakefield/react-list-app/tree/main/react-list#npm-start
+Hosting Link: https://github.com/m-wakefield/react-list-app/tree/main/react-list#npm-start
 
 Github link: https://github.com/m-wakefield
 
