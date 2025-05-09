@@ -1,12 +1,23 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 function ToDoList() {
-    const [tasks, setTasks] = useState([
-        { id: 1, text: 'Brush teeth', completed: false }, // ✅ added completed field
-        { id: 2, text: 'Take a shower', completed: false },
-        { id: 3, text: 'Walk the dog', completed: false }
-    ]);
+   const [tasks, setTasks] = useState(() => {
+  try {
+    const stored = localStorage.getItem('tasks');
+    return stored ? JSON.parse(stored) : [
+      { id: 1, text: 'Brush teeth', completed: false },
+      { id: 2, text: 'Take a shower', completed: false },
+      { id: 3, text: 'Walk the dog', completed: false }
+    ];
+  } catch (e) {
+    console.error("Failed to load tasks from localStorage:", e);
+    return [];
+  }
+});
+
+
     const [newTask, setNewTask] = useState('');
 
     function handleInputChange(event) {
@@ -15,7 +26,7 @@ function ToDoList() {
 
     function addTask() {
         if (newTask.trim() !== '') {
-            setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]); // ✅ added completed
+            setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]); // 
             setNewTask('');
         }
     }
@@ -41,8 +52,7 @@ function ToDoList() {
             setTasks(newTasks);
         }
     }
-
-    // ✅ New function: toggle completed state
+    
     function toggleTaskCompletion(id) {
         const updatedTasks = tasks.map(task =>
             task.id === id ? { ...task, completed: !task.completed } : task
@@ -66,7 +76,7 @@ function ToDoList() {
                 {tasks.map((task) => (
                     <li key={task.id}>
                         <span
-                            className={`text ${task.completed ? 'completed' : ''}`} // ✅ apply strike-through
+                            className={`text ${task.completed ? 'completed' : ''}`} // 
                             onClick={() => toggleTaskCompletion(task.id)}
                             style={{ cursor: 'pointer' }}
                         >
@@ -83,4 +93,3 @@ function ToDoList() {
 }
 
 export default ToDoList;
-
