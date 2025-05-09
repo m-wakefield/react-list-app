@@ -5,6 +5,7 @@ Github link: https://github.com/m-wakefield
 
 OVERVIEW
 
+
 The app supports:
 1.Adding, completing (strike-through), deleting, and reordering tasks
 
@@ -16,6 +17,7 @@ The app supports:
 
 5.Navigation between the To-Do List and Contact pages using React Router
 
+
 Technology supported:
 1.HTML
 
@@ -26,6 +28,7 @@ Technology supported:
 4.React Router DOM
 
 5.CSS
+
 
 Enhancements: (Future)
 1.(Functionality) – Edit existing tasks, add due dates, categorize by tags or priority
