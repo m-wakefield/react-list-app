@@ -3,7 +3,8 @@ import '../App.css';
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstname: '',
+    lastname: '',
     email: '',
     message: ''
   });
@@ -19,6 +20,7 @@ function Contact() {
     e.preventDefault();
     console.log('Contact Form Submitted:', formData);
     setSubmitted(true);
+    // Optional: clear the form
     setFormData({ name: '', email: '', message: '' });
   }
 
@@ -27,15 +29,26 @@ function Contact() {
       <h2>Contact Us</h2>
       {submitted && <p style={{ color: 'green' }}>Thanks for your message!</p>}
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
+        <label>First Name:</label>
         <input
           type="text"
-          name="name"
+          name="first name"
           value={formData.name}
           onChange={handleChange}
           placeholder="Your Name"
           required
         />
+
+ <label>Last Name:</label>
+        <input
+          type="text"
+          name="last name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Your Name"
+          required
+        />
+
 
         <label>Email:</label>
         <input
@@ -64,4 +77,3 @@ function Contact() {
 }
 
 export default Contact;
-
