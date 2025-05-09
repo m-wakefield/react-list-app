@@ -1,4 +1,4 @@
-To-Do List React App
+Task Management React App
 
 Monique Wakefield 
 
