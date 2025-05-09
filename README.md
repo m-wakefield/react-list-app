@@ -3,10 +3,13 @@ Monique Wakefield
 Github link: https://github.com/m-wakefield
 
 
+
+
 OVERVIEW
 
 
 The app supports:
+
 1.Adding, completing (strike-through), deleting, and reordering tasks
 
 2.Storing tasks in browser localStorage so they persist on refresh
@@ -18,7 +21,9 @@ The app supports:
 5.Navigation between the To-Do List and Contact pages using React Router
 
 
+
 Technology supported:
+
 1.HTML
 
 2.JavaScript 
@@ -30,7 +35,9 @@ Technology supported:
 5.CSS
 
 
+
 Enhancements: (Future)
+
 1.(Functionality) – Edit existing tasks, add due dates, categorize by tags or priority
 
 2.(UI/UX) – Responsive design, dark mode toggle, drag-and-drop task reordering
