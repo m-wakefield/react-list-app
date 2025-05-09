@@ -110,7 +110,7 @@
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: #0cd35f;
 }
 
 nav {
@@ -136,3 +136,27 @@ nav {
   color: #888;
 }
 
+.task-input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-input-row input {
+  flex: 1;
+}
+
+.input-button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-button-group input {
+  flex: 1 1 auto;
+  min-width: 0; 
+}
+
+.add-task-button {
+  white-space: nowrap; 
+}

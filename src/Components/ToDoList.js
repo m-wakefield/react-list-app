@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 function ToDoList() {
     const [tasks, setTasks] = useState([
-        { id: 1, text: 'Brush teeth', completed: false }, 
+        { id: 1, text: 'Brush teeth', completed: false }, // ✅ added completed field
         { id: 2, text: 'Take a shower', completed: false },
         { id: 3, text: 'Walk the dog', completed: false }
     ]);
@@ -15,7 +15,7 @@ function ToDoList() {
 
     function addTask() {
         if (newTask.trim() !== '') {
-            setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]); 
+            setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]); // ✅ added completed
             setNewTask('');
         }
     }
@@ -42,6 +42,7 @@ function ToDoList() {
         }
     }
 
+    // ✅ New function: toggle completed state
     function toggleTaskCompletion(id) {
         const updatedTasks = tasks.map(task =>
             task.id === id ? { ...task, completed: !task.completed } : task
@@ -65,7 +66,7 @@ function ToDoList() {
                 {tasks.map((task) => (
                     <li key={task.id}>
                         <span
-                            className={`text ${task.completed ? 'completed' : ''}`}
+                            className={`text ${task.completed ? 'completed' : ''}`} // ✅ apply strike-through
                             onClick={() => toggleTaskCompletion(task.id)}
                             style={{ cursor: 'pointer' }}
                         >
