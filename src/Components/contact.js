@@ -19,7 +19,6 @@ function Contact() {
     e.preventDefault();
     console.log('Contact Form Submitted:', formData);
     setSubmitted(true);
-    // Optional: clear the form
     setFormData({ name: '', email: '', message: '' });
   }
 
