@@ -1,12 +1,11 @@
 import '../App.css';
-
 import React, { useState } from 'react';
 
 function ToDoList() {
     const [tasks, setTasks] = useState([
-        { id: 1, text: 'Brush teeth' },
-        { id: 2, text: 'Take a shower' },
-        { id: 3, text: 'Walk the dog' }
+        { id: 1, text: 'Brush teeth', completed: false }, 
+        { id: 2, text: 'Take a shower', completed: false },
+        { id: 3, text: 'Walk the dog', completed: false }
     ]);
     const [newTask, setNewTask] = useState('');
 
@@ -16,7 +15,7 @@ function ToDoList() {
 
     function addTask() {
         if (newTask.trim() !== '') {
-            setTasks([...tasks, { id: Date.now(), text: newTask }]);
+            setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]); 
             setNewTask('');
         }
     }
@@ -43,6 +42,13 @@ function ToDoList() {
         }
     }
 
+    function toggleTaskCompletion(id) {
+        const updatedTasks = tasks.map(task =>
+            task.id === id ? { ...task, completed: !task.completed } : task
+        );
+        setTasks(updatedTasks);
+    }
+
     return (
         <div className="todo-list">
             <h2>To-Do List</h2>
@@ -58,7 +64,13 @@ function ToDoList() {
             <ol>
                 {tasks.map((task) => (
                     <li key={task.id}>
-                        <span className="text">{task.text}</span>
+                        <span
+                            className={`text ${task.completed ? 'completed' : ''}`}
+                            onClick={() => toggleTaskCompletion(task.id)}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            {task.text}
+                        </span>
                         <button onClick={() => moveTaskUp(task.id)}>↑</button>
                         <button onClick={() => moveTaskDown(task.id)}>↓</button>
                         <button onClick={() => deleteTask(task.id)}>Delete</button>
@@ -70,3 +82,4 @@ function ToDoList() {
 }
 
 export default ToDoList;
+
