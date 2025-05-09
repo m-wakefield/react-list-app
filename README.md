@@ -4,6 +4,8 @@ Monique Wakefield
 
 Hosting Link: https://github.com/m-wakefield/react-list-app/tree/main/react-list#npm-start
 
+http://localhost:3000/
+
 Github link: https://github.com/m-wakefield
 
 
