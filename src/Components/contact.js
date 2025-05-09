@@ -20,8 +20,12 @@ function Contact() {
     e.preventDefault();
     console.log('Contact Form Submitted:', formData);
     setSubmitted(true);
-    // Optional: clear the form
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({
+      firstname: '',
+      lastname: '',
+      email: '',
+      message: ''
+    });
   }
 
   return (
@@ -32,23 +36,22 @@ function Contact() {
         <label>First Name:</label>
         <input
           type="text"
-          name="first name"
-          value={formData.name}
+          name="firstname"
+          value={formData.firstname}
           onChange={handleChange}
-          placeholder="Your Name"
+          placeholder="Your First Name"
           required
         />
 
- <label>Last Name:</label>
+        <label>Last Name:</label>
         <input
           type="text"
-          name="last name"
-          value={formData.name}
+          name="lastname"
+          value={formData.lastname}
           onChange={handleChange}
-          placeholder="Your Name"
+          placeholder="Your Last Name"
           required
         />
-
 
         <label>Email:</label>
         <input
@@ -77,3 +80,4 @@ function Contact() {
 }
 
 export default Contact;
+
