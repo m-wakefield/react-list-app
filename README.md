@@ -2,9 +2,9 @@ To-Do List React App
 
 Monique Wakefield 
 
-Hosting Link: https://github.com/m-wakefield/react-list-app/tree/main/react-list#npm-start
+Hosting Link:  http://localhost:3000/
 
-http://localhost:3000/
+https://github.com/m-wakefield/react-list-app/tree/main/react-list#npm-start
 
 Github link: https://github.com/m-wakefield
 
