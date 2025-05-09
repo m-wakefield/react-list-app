@@ -6,7 +6,7 @@ function ToDoList() {
     const [tasks, setTasks] = useState([
         { id: 1, text: 'Brush teeth' },
         { id: 2, text: 'Take a shower' },
-        { id: 3, text: 'Go to the gym' }
+        { id: 3, text: 'Walk the dog' }
     ]);
     const [newTask, setNewTask] = useState('');
 

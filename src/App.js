@@ -4,6 +4,12 @@ import ToDoList from './Components/ToDoList';
 import Contact from './Components/Contact';
 import './App.css';
 
+<nav>
+  <Link to="/" className="nav-link">Home</Link>
+  <Link to="/contact" className="nav-link">Contact</Link>
+</nav>
+
+
 function App() {
   return (
     <Router>
