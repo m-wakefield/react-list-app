@@ -1,15 +1,13 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import "../App.css";
+import { useState } from 'react';
 import Navbar from './Navbar';
-
+import '../App.css';
 
 function App() {
- const [tasks, setTasks] = useState([
-  { text: 'Buy groceries', completed: false },
-  { text: 'Finish React project', completed: true },
-  { text: 'Call mom', completed: false }
-]);
+  const [tasks, setTasks] = useState([
+    { text: 'Buy groceries', completed: false },
+    { text: 'Finish React project', completed: true },
+    { text: 'Call mom', completed: false }
+  ]);
 
   const [newTask, setNewTask] = useState('');
 
@@ -17,7 +15,7 @@ function App() {
     if (newTask.trim() === '') return;
 
     const task = {
-      text: newTask,
+      text: newTask.trim(),
       completed: false
     };
 
@@ -55,42 +53,42 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      <h1>✅ To-Do List</h1>
-      <div className="input-group">
-        <input
-          type="text"
-          placeholder="Enter a task..."
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-        />
-        <>
-  <Navbar />
-  {/* rest of the content */}
-</>
+    <>
+      <Navbar />
+      <div className="app-container">
+        <h1>✅ To-Do List</h1>
 
-        <button onClick={handleAddTask}>Add</button>
+        <div className="input-group">
+          <input
+            type="text"
+            placeholder="Enter a task..."
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button onClick={handleAddTask}>Add</button>
+        </div>
+
+        <ul className="task-list">
+          {tasks.map((task, index) => (
+            <li
+              key={index}
+              className={task.completed ? 'completed' : ''}
+              onClick={() => handleToggleTask(index)}
+            >
+              <span>{task.text}</span>
+              <div className="task-actions">
+                <button onClick={(e) => { e.stopPropagation(); moveTaskUp(index); }}>🔼</button>
+                <button onClick={(e) => { e.stopPropagation(); moveTaskDown(index); }}>🔽</button>
+                <button className="delete-btn" onClick={(e) => {
+                  e.stopPropagation();
+                  handleDeleteTask(index);
+                }}>❌</button>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="task-list">
-        {tasks.map((task, index) => (
-          <li
-            key={index}
-            className={task.completed ? 'completed' : ''}
-            onClick={() => handleToggleTask(index)}
-          >
-            <span>{task.text}</span>
-            <div className="task-actions">
-              <button onClick={(e) => { e.stopPropagation(); moveTaskUp(index); }}>🔼</button>
-              <button onClick={(e) => { e.stopPropagation(); moveTaskDown(index); }}>🔽</button>
-              <button className="delete-btn" onClick={(e) => {
-                e.stopPropagation();
-                handleDeleteTask(index);
-              }}>❌</button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </>
   );
 }
 
