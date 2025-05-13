@@ -7,20 +7,8 @@ function App() {
 
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
-
-    const task = {
-      text: newTask,
-      completed: false
-    };
-
-    setTasks([...tasks, task]);
+    setTasks([...tasks, newTask]);
     setNewTask('');
-  };
-
-  const handleToggleTask = (index) => {
-    const updatedTasks = [...tasks];
-    updatedTasks[index].completed = !updatedTasks[index].completed;
-    setTasks(updatedTasks);
   };
 
   const handleDeleteTask = (index) => {
@@ -30,7 +18,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>✅ To-Do List</h1>
+      <h1>📝 To-Do List</h1>
       <div className="input-group">
         <input
           type="text"
@@ -42,16 +30,9 @@ function App() {
       </div>
       <ul className="task-list">
         {tasks.map((task, index) => (
-          <li
-            key={index}
-            className={task.completed ? 'completed' : ''}
-            onClick={() => handleToggleTask(index)}
-          >
-            {task.text}
-            <button className="delete-btn" onClick={(e) => {
-              e.stopPropagation(); // prevent toggle when deleting
-              handleDeleteTask(index);
-            }}>❌</button>
+          <li key={index}>
+            {task}
+            <button className="delete-btn" onClick={() => handleDeleteTask(index)}>❌</button>
           </li>
         ))}
       </ul>
