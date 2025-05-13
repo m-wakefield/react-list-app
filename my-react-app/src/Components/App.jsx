@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../App.css";
+import Navbar from './Navbar';
 
 
 function App() {
@@ -63,6 +64,11 @@ function App() {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
+        <>
+  <Navbar />
+  {/* rest of the content */}
+</>
+
         <button onClick={handleAddTask}>Add</button>
       </div>
       <ul className="task-list">
