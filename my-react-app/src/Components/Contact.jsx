@@ -56,10 +56,13 @@ function Contact() {
           placeholder="Your Last Name"
           required
         />
-        <>
+       <>
   <Navbar />
-  {/* rest of the content */}
+  <div className="app-container">
+    ...your page content
+  </div>
 </>
+
 
 
         <label>Email:</label>
