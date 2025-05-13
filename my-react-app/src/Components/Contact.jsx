@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+
 
 
 function Contact() {
@@ -54,6 +56,11 @@ function Contact() {
           placeholder="Your Last Name"
           required
         />
+        <>
+  <Navbar />
+  {/* rest of the content */}
+</>
+
 
         <label>Email:</label>
         <input
@@ -64,7 +71,7 @@ function Contact() {
           placeholder="Your Email"
           required
         />
-        
+
 <Link to="/">← Back to To-Do List</Link>
 
         <label>Message:</label>
