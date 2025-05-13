@@ -1,6 +1,8 @@
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 
+<Link to="/contact">📨 Contact Us</Link>
+
 
 function ToDoList() {
    const [tasks, setTasks] = useState(() => {
