@@ -70,7 +70,7 @@ const [tasks, setTasks] = useState(() => {
         <div className="input-group">
           <input
             type="text"
-            placeholder="Enter a task..."
+            placeholder="Where's my socks?"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
           />
