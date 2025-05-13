@@ -3,11 +3,11 @@ import Navbar from './Navbar';
 import '../App.css';
 
 function App() {
-  const [tasks, setTasks] = useState([
-    { text: 'Buy groceries', completed: false },
-    { text: 'Finish React project', completed: true },
-    { text: 'Call mom', completed: false }
-  ]);
+  const [tasks, setTasks] = useState(() => {
+  const saved = localStorage.getItem('tasks');
+  return saved ? JSON.parse(saved) : [];
+});
+
 
   const [newTask, setNewTask] = useState('');
 
@@ -50,6 +50,9 @@ function App() {
     updatedTasks[index + 1] = updatedTasks[index];
     updatedTasks[index] = temp;
     setTasks(updatedTasks);
+    useEffect(() => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}, [tasks]);
   };
 
   return (

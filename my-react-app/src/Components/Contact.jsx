@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import '../App.css';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Navbar from './Navbar';
-
-
+import '../App.css';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -15,14 +12,14 @@ function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  }
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Contact Form Submitted:', formData);
+    console.log('Submitted contact form:', formData);
     setSubmitted(true);
     setFormData({
       firstname: '',
@@ -30,68 +27,52 @@ function Contact() {
       email: '',
       message: ''
     });
-  }
+  };
 
   return (
-    <div className="contact-page todo-list">
-      <h2>Contact Us</h2>
-      {submitted && <p style={{ color: 'green' }}>Thanks for your message!</p>}
-      <form onSubmit={handleSubmit}>
-        <label>First Name:</label>
-        <input
-          type="text"
-          name="firstname"
-          value={formData.firstname}
-          onChange={handleChange}
-          placeholder="Your First Name"
-          required
-        />
-
-        <label>Last Name:</label>
-        <input
-          type="text"
-          name="lastname"
-          value={formData.lastname}
-          onChange={handleChange}
-          placeholder="Your Last Name"
-          required
-        />
-       <>
-  <Navbar />
-  <div className="app-container">
-    ...your page content
-  </div>
-</>
-
-
-
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Your Email"
-          required
-        />
-
-<Link to="/">← Back to To-Do List</Link>
-
-        <label>Message:</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Your Message"
-          rows="4"
-          required
-        />
-
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="app-container">
+        <h1>📨 Contact Us</h1>
+        {submitted && <p style={{ color: 'green' }}>Thanks for your message!</p>}
+        <form onSubmit={handleSubmit} className="contact-form">
+          <input
+            type="text"
+            name="firstname"
+            value={formData.firstname}
+            onChange={handleChange}
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            name="lastname"
+            value={formData.lastname}
+            onChange={handleChange}
+            placeholder="Last Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            required
+          />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your message..."
+            rows="4"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </>
   );
 }
 
 export default Contact;
-
