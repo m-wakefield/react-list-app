@@ -3,9 +3,15 @@ import Navbar from './Navbar';
 import '../App.css';
 
 function App() {
-  const [tasks, setTasks] = useState(() => {
+ const defaultTasks = [
+  { text: 'Buy groceries', completed: false },
+  { text: 'Finish React project', completed: false },
+  { text: 'Call mom', completed: false }
+];
+
+const [tasks, setTasks] = useState(() => {
   const saved = localStorage.getItem('tasks');
-  return saved ? JSON.parse(saved) : [];
+  return saved ? JSON.parse(saved) : defaultTasks;
 });
 
 
