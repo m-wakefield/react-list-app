@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './components/App.jsx';
-import Contact from './components/Contact.jsx';
+import App from './App.jsx';
+import Contact from './Components/Contact.jxs';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
