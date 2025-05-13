@@ -10,7 +10,7 @@ body {
 .app-container {
   max-width: 500px;
   margin: 60px auto;
-  padding: 2rem;
+  padding: padding: 4rem 2rem 2rem;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -114,23 +114,29 @@ h1 {
   background-color: #4caf50;
   padding: 1rem;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  padding: 0;
+  gap: 3rem;
   margin: 0;
+  padding: 0;
 }
 
 .navbar a {
   color: white;
+  font-size: 1.1rem;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .navbar a:hover {
-  text-decoration: underline;
+  color: #d4ffd4;
 }
