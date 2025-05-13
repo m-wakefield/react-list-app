@@ -2,13 +2,30 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+ const [tasks, setTasks] = useState([
+  { text: 'Buy groceries', completed: false },
+  { text: 'Finish React project', completed: true },
+  { text: 'Call mom', completed: false }
+]);
+
   const [newTask, setNewTask] = useState('');
 
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
-    setTasks([...tasks, newTask]);
+
+    const task = {
+      text: newTask,
+      completed: false
+    };
+
+    setTasks([...tasks, task]);
     setNewTask('');
+  };
+
+  const handleToggleTask = (index) => {
+    const updatedTasks = [...tasks];
+    updatedTasks[index].completed = !updatedTasks[index].completed;
+    setTasks(updatedTasks);
   };
 
   const handleDeleteTask = (index) => {
@@ -16,9 +33,27 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const moveTaskUp = (index) => {
+    if (index === 0) return;
+    const updatedTasks = [...tasks];
+    const temp = updatedTasks[index - 1];
+    updatedTasks[index - 1] = updatedTasks[index];
+    updatedTasks[index] = temp;
+    setTasks(updatedTasks);
+  };
+
+  const moveTaskDown = (index) => {
+    if (index === tasks.length - 1) return;
+    const updatedTasks = [...tasks];
+    const temp = updatedTasks[index + 1];
+    updatedTasks[index + 1] = updatedTasks[index];
+    updatedTasks[index] = temp;
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="app-container">
-      <h1>📝 To-Do List</h1>
+      <h1>✅ To-Do List</h1>
       <div className="input-group">
         <input
           type="text"
@@ -30,9 +65,20 @@ function App() {
       </div>
       <ul className="task-list">
         {tasks.map((task, index) => (
-          <li key={index}>
-            {task}
-            <button className="delete-btn" onClick={() => handleDeleteTask(index)}>❌</button>
+          <li
+            key={index}
+            className={task.completed ? 'completed' : ''}
+            onClick={() => handleToggleTask(index)}
+          >
+            <span>{task.text}</span>
+            <div className="task-actions">
+              <button onClick={(e) => { e.stopPropagation(); moveTaskUp(index); }}>🔼</button>
+              <button onClick={(e) => { e.stopPropagation(); moveTaskDown(index); }}>🔽</button>
+              <button className="delete-btn" onClick={(e) => {
+                e.stopPropagation();
+                handleDeleteTask(index);
+              }}>❌</button>
+            </div>
           </li>
         ))}
       </ul>
