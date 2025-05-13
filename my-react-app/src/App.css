@@ -1,63 +1,112 @@
-.app-container {
-  font-family: sans-serif;
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 1rem;
-  text-align: center;
-  background: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
 }
 
+/* Main app container */
+.app-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Input + Add button group */
 .input-group {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .input-group input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .input-group button {
-  padding: 8px 16px;
+  padding: 10px 20px;
   font-size: 1rem;
-  background: #4caf50;
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .input-group button:hover {
-  background: #45a049;
+  background-color: #43a047;
 }
 
+/* Task list */
 .task-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .task-list li {
-  background: white;
-  padding: 10px;
-  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-list li:hover {
+  background-color: #e0e0e0;
+}
+
+/* Completed task styling */
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Action buttons: up, down, delete */
+.task-actions {
+  display: flex;
+  gap: 6px;
+  margin-left: 10px;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.task-actions button:hover {
+  color: #000;
 }
 
 .delete-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
   color: red;
 }
-.completed {
-  text-decoration: line-through;
-  color: gray;
+
+.delete-btn:hover {
+  color: darkred;
 }
