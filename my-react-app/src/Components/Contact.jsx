@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
-<Link to="/">← Back to To-Do List</Link>
-
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -66,6 +64,8 @@ function Contact() {
           placeholder="Your Email"
           required
         />
+        
+<Link to="/">← Back to To-Do List</Link>
 
         <label>Message:</label>
         <textarea
