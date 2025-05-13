@@ -57,3 +57,7 @@
   cursor: pointer;
   color: red;
 }
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
