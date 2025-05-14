@@ -1,4 +1,5 @@
-"homepage": "https://m-wakefield.github.io/react-list-app",
+{
+  "homepage": "https://m-wakefield.github.io/react-list-app",
   "name": "react-list-app",
   "private": true,
   "version": "0.0.0",
@@ -25,3 +26,5 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "vite": "^6.3.5"
+  }
+}
